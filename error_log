@@ -1,0 +1,6 @@
+[20-Jun-2017 00:43:05 America/New_York] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/nhinsrn4/public_html/tham-tu.com/application/views/layout/menufooter.php on line 5
+[20-Jun-2017 00:43:16 America/New_York] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/nhinsrn4/public_html/tham-tu.com/application/views/layout/menufooter.php on line 5
+[20-Jun-2017 10:57:20 America/New_York] PHP Fatal error:  Call to undefined function curent_url() in /home/nhinsrn4/public_html/tham-tu.com/application/views/tintuc/chitiettintuc_dichvu.php on line 262
+[20-Jun-2017 11:19:02 America/New_York] PHP Parse error:  syntax error, unexpected '<' in /home/nhinsrn4/public_html/tham-tu.com/application/views/tintuc/chitiettintuc.php on line 255
+[20-Jun-2017 11:19:42 America/New_York] PHP Parse error:  syntax error, unexpected $end in /home/nhinsrn4/public_html/tham-tu.com/application/views/tintuc/chitiettintuc.php on line 352
+[20-Jun-2017 11:24:49 America/New_York] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/nhinsrn4/public_html/tham-tu.com/application/views/tintuc/index.php on line 70
