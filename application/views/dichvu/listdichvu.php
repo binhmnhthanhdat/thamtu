@@ -68,7 +68,7 @@
             $list_tintuc_dv = $this->db->query($sql);
             if ($list_tintuc_dv->num_rows() > 0) {
                 ?>
-                <div class="list_new_hot" style="margin-right: 20px;padding-right:15px;float:right">
+                <div class="list_new_hot" style="padding-right:15px;float:right">
                     <div  class="title_new_lienquan">Các tin tức liên quan</div>
                     <?php
                     foreach ($list_tintuc_dv->result() as $kqlist_tintuc_dv) {

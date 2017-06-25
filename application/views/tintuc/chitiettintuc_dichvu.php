@@ -68,7 +68,7 @@
                     <style type="text/css">
                         #google_comments iframe{height:210px;}
                     </style>
-                    <script src="<? echo base_url();?>js/plusone.js">
+                    <script src="https://apis.google.com/js/plusone.js">
                     </script>
                     <div id="google_comments"></div>
                     <script>

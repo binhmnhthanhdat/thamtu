@@ -58,7 +58,7 @@ $kqsetting = $setting->row();
             <a href="javascript:thicongnoithat" onclick="newPopup('http://twitter.com/home?status=<? echo base_url().uri_string();?>')" title="Chia sẻ trên Twiter"  class="padL5" rel="nofollow"><img src=" <?php echo base_url(); ?>images/twiter.png" width="26" height="26" alt="Chia sẻ Twiter" /></a>
         </div>
         <div class="group_tieude">
-            <h1 style = "display: block; padding-right: 10px;" class="tieude" title="<?php if (isset($title)) {
+            <h1 style = " padding-right: 10px;" class="tieude" title="<?php if (isset($title)) {
                         echo $title;
                     } else {
                         echo $kqsetting->site_name;
