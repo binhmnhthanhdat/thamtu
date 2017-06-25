@@ -1,35 +1,7 @@
-<style>
-    .breadcrumb {
-        float: left;
-        width: 97% !important;
-        margin-bottom: 10px;
-        border: 1px solid #DDD;
-    }
-    .breadcrumb {
-        padding: 8px 15px;
-        margin-bottom: 20px;
-        list-style: none;
-        background-color: #f5f5f5;
-        border-radius: 4px;
-    }
-    .breadcrumb-separator
-    {
-        padding: 0px 15px;
-    }
-    .bread
-    {
-        font-weight:bold;
-        font-size: 16px;
-    }
-</style>
 <div class="clearFix" ></div>
-<!-- begin thietkeweb-->
-
 <div  class="list_dichvu">
     <div class="menuM">
-
         <?php
-        //$url=$this->uri->segment(3);
         if ($this->uri->segment(3) != "" && !is_numeric($this->uri->segment(3))) {
             $url = $this->uri->segment(3);
         } else if ($this->uri->segment(2) != "" && !is_numeric($this->uri->segment(2))) {
@@ -37,33 +9,25 @@
         } else if ($this->uri->segment(1) != "" && !is_numeric($this->uri->segment(1))) {
             $url = $this->uri->segment(1);
         }
-
         if ($url) {
-
             $sql = "select * from group_project where alias=\"" . $url . "\"";
             $laytengroup = $this->db->query($sql);
             $kqlaytengroup = $laytengroup->row();
         }
         ?>
-
         <div class="breadcrumb">
             <h2 style = "display:inline"><a class = "bread" href="<?php echo base_url(); ?>">Công ty thám tử </a> </h2>
             <span class="breadcrumb-separator">»»</span>
             <h2 style = "display:inline"><a class = "bread"  href="<?php echo base_url(); ?><?php echo $url; ?>"><?php echo $kqlaytengroup->name; ?></a> </h2>
-
         </div>
-
-
     </div>
     <div class="ContentMain" >
-
         <?php
         if ($laygroupproject->num_rows() > 0) {
             $kqlaygroupproject = $laygroupproject->row();
             ?>
             <div class="fixTopContent2">
                 <h3 style = "padding-left:10px;"  class="title_dichvu_edit" title="<?php echo $kqlaygroupproject->title; ?>"> <?php echo $kqlaygroupproject->title; ?></h3>
-
             </div>
             <div class="fixTopContent3" >
                 <div class="content_left">
@@ -72,46 +36,26 @@
                         <?php echo $kqlaygroupproject->content; ?>
                         <?php echo $kqlaygroupproject->content_detail; ?>
                     </div>
-
-
-                    <?php
-                    //if(!empty($this->pagination->create_links()))
-                    {
-                        ?>
                         <ul class="pageNews padR35">
-                            <?
-                            // print_r($this->pagination->create_links());
-                            echo $this->pagination->create_links(); // tạo link phân trang  ?>
-
+                            <? echo $this->pagination->create_links(); ?>
                         </ul>
-                    <?php } ?>
                 </div>
-
-                <?php
-            }
-            ?>
-
             <?php
             if ($laytinproject->num_rows() > 0) {
                 ?>
                 <div class="list_new_hot">
-                    <div  class="title_new_lienquan">Các dịch vụ liên quan</div>
-                    <?php
-                    foreach ($laytinproject->result() as $kqlaytinproject) {
-                        ?>
+                    <div class="title_new_lienquan">Các dịch vụ liên quan</div>
+                    <?php foreach ($laytinproject->result() as $kqlaytinproject) {  ?>
                         <div class="new_hot">
                             <a class="image_new" href="<?php echo base_url(); ?><?php echo $url; ?>/<?php echo $kqlaytinproject->alias; ?>" title="<?php echo $kqlaytinproject->title; ?>"><img src="<?php
-                                echo base_url();
-                                echo $kqlaytinproject->img;
-                                ?>" width="73" height="75" alt="<?php echo $kqlaytinproject->title; ?>" class="flLeft" /></a>
+                                echo base_url();echo $kqlaytinproject->img;?>" width="73" height="75" alt="<?php echo $kqlaytinproject->title; ?>" class="flLeft" /></a>
                             <div class="new_hot_content">
                                 <h4  class="title_hidden" > <a href="<?php echo base_url(); ?><?php echo $url; ?>/<?php echo $kqlaytinproject->alias; ?>" title="<?php echo $kqlaytinproject->title; ?>" style="font-size: 15px;color:#045E93;"> <?php echo $kqlaytinproject->title; ?></a> </h4>
                                 <div class="description"> <?php echo $kqlaytinproject->description; ?></div>
                             </div>
                             <div class="clearFix"></div>
                         </div>
-
-                        <?php
+                    <?php
                     }
                     ?>
 
@@ -119,7 +63,6 @@
                 <?php
             }
             ?>
-
             <?php
             $sql = "SELECT *  FROM `news` WHERE `id_group_project` = 0 AND `type` != 2 order by id desc limit 0,10";
             $list_tintuc_dv = $this->db->query($sql);
@@ -143,30 +86,18 @@
                             </div>
                             <div class="clearFix"></div>
                         </div>
-
                     <?php }
                     ?>
-
                 </div>
             <?php } ?>
             <div class="clearFix"></div>
-            <!--
-            <div class="phantrang">
-                   <ul class="pageNews padR35">
-                             <?
-            // print_r($this->pagination->create_links());
-              //echo $this->pagination->create_links(); // tạo link phân trang  ?>
-              <a href="#" class="last"></a>
-             <a href="#" class="first"></a>
-                   </ul>
-           </div>
-            -->
+
             <div class="gocRight"></div>
         </div>
+        <?php
+            }
+        ?>
         <div class="comment_google">
-
-
-
             <script type="text/javascript"  src="https://apis.google.com/js/plusone.js">
             </script>
             <div id="google_comments"></div>
@@ -182,4 +113,29 @@
         </div>
     </div>
 </div>
-<!--end thietkeweb-->
+    <article class="h-entry"  style="display: none;" >
+        <p class="p-name"><?php  echo $kqlaygroupproject->title;?></p>
+        <p>Published by <a class="p-author h-card" href="<?php echo base_url(uri_string());?>">ThangPV/posts</a>
+            on <time class="published" datetime="<?php echo $kqlaytengroup->datetimeupdate; ?>"><?php echo $kqlaytengroup->datetimeupdate; ?></time></p>
+        <p class="p-summary"><? echo $description;?></p>
+        <div class="e-content">
+              <?php  echo $kqlaygroupproject->content;?>
+        </div>
+    </article>
+    <div itemscope itemtype="http://schema.org/LocalBusiness"  style="display: none;">
+        <span itemprop="name"><?php  echo $kqlaygroupproject->title;?></span>
+        <link itemprop="url" href="<?php echo base_url(uri_string());?>">
+        <link itemprop="sameAs" href="<?php echo base_url(uri_string());?>">
+        <link itemprop="image" href="<?php echo base_url();?>images/logo-cong-ty-tham-tu.png">
+        <link itemprop="address" href="Hà Nội - Sài Gòn">
+        <link itemprop="telephone" href="0941111335">
+
+    </div>
+    <div itemscope itemtype="http://schema.org/Recipe"  style="display: none;">
+          <span itemprop="name"><?php  echo $kqlaygroupproject->title;?></span>
+          <img itemprop="image" src="<?php echo base_url();?>images/logo-cong-ty-tham-tu.png" alt="<?php  echo $kqlaygroupproject->title;?>">
+          <div itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                  <span itemprop="ratingValue">1</span>/<span itemprop="bestRating">10</span>
+                  <span itemprop="ratingCount">100</span> bình chọn
+          </div>
+    </div>

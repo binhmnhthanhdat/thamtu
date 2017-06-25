@@ -10,6 +10,28 @@
 .bx-caption p {
 	color:white;
 }
+.breadcrumb {
+        float: left;
+        width: 97% !important;
+        margin-bottom: 10px;
+        border: 1px solid #DDD;
+    }
+    .breadcrumb {
+        padding: 8px 15px;
+        margin-bottom: 20px;
+        list-style: none;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+    }
+    .breadcrumb-separator
+    {
+        padding: 0px 15px;
+    }
+    .bread
+    {
+        font-weight:bold;
+        font-size: 16px;
+    }
 a {
     text-decoration: none;
     color: #011e34;
@@ -5997,7 +6019,7 @@ a:hover {
     #wrapper * {
         max-width: 599px
     }
-	
+
     .group_tieude {
         width: 90%;
         height: 56px;
